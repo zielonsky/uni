@@ -19,7 +19,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome ');
+    return view('welcome',['name' => 'Piotr', 'surname' => 'Zieliński', 'city' => 'Poznań',
+    'about' => 'Strona WSB Piotra', 'home' => 'Strona domowa', 'contact' => 'piotr@wsb.ponan.pl']);
 });
 
 // Route::get('/wsb', function () {
@@ -98,7 +99,7 @@ Route::get('/user/{name}/{age?}', function(string $name, int $age = null){
 })->where(['name' => '[A-Za-z]+']);
 
 Route::get('/wsb', function () {
-    return view('wsb',['name' => 'Anna', 'surname' => 'Nowak', 'city' => 'PoznańŚĆĘŻ']);
+    return view('wsb',['name' => 'Anna', 'surname' => 'Nowak', 'city' => 'Poznań']);
 });
 
 Route::get('/loop', function () {
