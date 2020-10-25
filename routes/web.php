@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WsbSite;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController1;
 
 // use $namespace = 'App\Http\Controllers';
 
@@ -125,5 +126,9 @@ Route::get('drives/{page}', [PageController::class, 'show']);
 Route::get('/userform', function () {
     return view('userform');
 });
-
 Route::post('usercontroller', [UserController::class, 'account']);
+
+//wyświetlić na stronie wpisane dane
+
+Route::view('/user', 'user');
+Route::post('usercontroller1', [UserController1::class, 'index']);
